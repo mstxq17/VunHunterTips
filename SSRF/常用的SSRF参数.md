@@ -13,6 +13,8 @@ git clone https://github.com/ethicalhackingplayground/ssrf-king
 gradle build
 ```
 
+> 自动使用burpcollaborator来进行探测非常方便
+
 介绍链接:https://www.kitploit.com/2021/01/ssrf-king-ssrf-plugin-for-burp.html?utm_source=dlvr.it&utm_medium=twitter
 
 
