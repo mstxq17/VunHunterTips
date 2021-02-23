@@ -39,7 +39,12 @@ fofa:
 icon_hash=-797813492
 ```
 
+其他shodan语法:
 
+```
+ssl:target.* 200
+http://Ssl.cert.subject.CN:"target.*" 200
+```
 
 
 
