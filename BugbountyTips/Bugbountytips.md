@@ -15,6 +15,14 @@
 
 
 
+## 批量扫描思路
+
+`subfinder -d baidu.com -silent | httpx -silent | nuclei  -t files/ -o results.txt`
+
+
+
+
+
 ## 测试payload
 
 这个很多骚姿势: [Payloads_xss_sql_bypass](https://github.com/Y000o/Payloads_xss_sql_bypass)
