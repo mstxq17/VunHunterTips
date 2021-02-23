@@ -21,6 +21,26 @@
 
 
 
+## 收集资产
+
+根据favicon图标来搜索:
+
+先获取hash:` iconhash  https://www.zhishidashi.com/favicon.ico`
+
+shodan:
+
+```
+http.favicon.hash:-797813492
+```
+
+fofa:
+
+```
+icon_hash=-797813492
+```
+
+
+
 
 
 ## 测试payload
