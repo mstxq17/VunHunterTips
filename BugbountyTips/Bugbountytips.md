@@ -19,7 +19,7 @@
 
 `subfinder -d baidu.com -silent | httpx -silent | nuclei  -t files/ -o results.txt`
 
-
+`subfinder -d nuomi.com -silent | httpx -silent | nuclei -t nuclei-templates  -o results.txt`
 
 ## 收集资产
 
