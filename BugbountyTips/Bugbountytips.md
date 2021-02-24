@@ -21,6 +21,8 @@
 
 `subfinder -d nuomi.com -silent | httpx -silent | nuclei -t nuclei-templates  -o results.txt`
 
+`subfinder -dL baidu.txt -silent | httpx -silent | nuclei -t nuclei-templates  -o results.txt`
+
 ## 收集资产
 
 根据favicon图标来搜索:
