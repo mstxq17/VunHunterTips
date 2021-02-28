@@ -48,6 +48,12 @@ ssl:target.* 200
 http://Ssl.cert.subject.CN:"target.*" 200
 ```
 
+其他fofa:
+
+```
+python3 X-Fofa.py 'cert=" BEIJING JINGDONG SHANGKE INFORMATION TECHNOLOGY CO., LTD."' jd _fofapro_ars_session的值
+```
+
 
 
 ## 测试payload
