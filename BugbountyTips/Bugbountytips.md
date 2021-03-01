@@ -13,6 +13,12 @@
 8. X-Forwarded-Proto headers:
 ```
 
+### 任意密码重置
+
+发送重置密码邮件的时候可以增加:
+
+X-Forwarded-Host: xss.sb
+
 
 
 ## 批量扫描思路
