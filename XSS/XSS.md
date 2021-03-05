@@ -45,3 +45,10 @@ Payload:
 1.iconUrl=XSS
 ```
 
+
+
+
+
+## XSS相关的网站
+
+比较安全:`https://xsshunter.com/`
