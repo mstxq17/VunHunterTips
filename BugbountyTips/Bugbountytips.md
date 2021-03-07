@@ -21,6 +21,17 @@ X-Forwarded-Host: xss.sb
 
 
 
+
+
+### 绕过401
+
+```
+X-Custom-IP-Authorization: 127.0.0.1
+X-Forwarded-Origin: 127.0.0.1
+```
+
+
+
 ## 批量扫描思路
 
 `subfinder -d baidu.com -silent | httpx -silent | nuclei  -t files/ -o results.txt`
@@ -28,6 +39,14 @@ X-Forwarded-Host: xss.sb
 `subfinder -d nuomi.com -silent | httpx -silent | nuclei -t nuclei-templates  -o results.txt`
 
 `subfinder -dL baidu.txt -silent | httpx -silent | nuclei -t nuclei-templates  -o results.txt`
+
+
+
+获取json文件
+
+```
+assetfinder http://tesla.com | waybackurls | grep -E "\.json(?:onp?)?$" | anew 
+```
 
 ## 收集资产
 
@@ -59,6 +78,16 @@ http://Ssl.cert.subject.CN:"target.*" 200
 ```
 python3 X-Fofa.py 'cert=" BEIJING JINGDONG SHANGKE INFORMATION TECHNOLOGY CO., LTD."' jd _fofapro_ars_session的值
 ```
+
+
+
+利用第三方服务提取:
+
+```
+curl --silent https://sonar.omnisint.io/subdomains/didichuxing.com | grep -oE "[a-zA-Z0-9._-]+\.didichuxing.com" | sort -u
+```
+
+
 
 
 
