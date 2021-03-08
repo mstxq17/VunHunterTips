@@ -51,6 +51,8 @@ X-Forwarded-Origin: 127.0.0.1
 3. assetfinder $(cat domain.txt) |anew| httpx -silent -mc 200,301 --threads 100|waybackurls | grep -E "\.json(?:onp?)?$" |anew
 4.cat domain.txt | assetfinder -subs-only | anew | httpx -silent -mc 200,301 | waybackurls
 5.cat domain.txt| assetfinder -subs-only|anew |waybackurls |grep -E "\.json(?:onp?)?$"|anew|httpx --title --mc 200,301,302 -o youzhanok.txt
+6. cat target.txt | assetfinder -subs-only |anew | waybackurls| anew| grep -v 'jpg' |  httpx -silent -mc 200,301 -o resultAll.txt
+7.cat target.txt | assetfinder -subs-only |grep -v 'static\|img' |anew | waybackurls| anew| grep -v 'jpg' |  httpx -silent -mc 200,301 -o resultAll.txt
 ```
 
 
@@ -64,7 +66,8 @@ JSFSCAN.h
 >```
 
 ```
-bash JSFScan.sh -l target.txt  --all -r -o zhipin.ru
+1.sed   "s/^/http:\/\//g"  targets.txt > targets1.txt
+2.bash JSFScan.sh -l target.txt  --all -r -o target.ru
 ```
 
 
