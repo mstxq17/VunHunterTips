@@ -11,6 +11,7 @@
 6. Forwarded:
 7. X-HTTP-Host- Override:
 8. X-Forwarded-Proto headers:
+9.X-HTTP-Method -Override: PUT
 ```
 
 ### 任意密码重置
@@ -45,8 +46,30 @@ X-Forwarded-Origin: 127.0.0.1
 获取json文件
 
 ```
-assetfinder http://tesla.com | waybackurls | grep -E "\.json(?:onp?)?$" | anew 
+1.assetfinder http://tesla.com | waybackurls | grep -E "\.json(?:onp?)?$" | anew
+2.assetfinder $(cat domain.txt) |anew| waybackurls | grep -E "\.json(?:onp?)?$" |anew
+3. assetfinder $(cat domain.txt) |anew| httpx -silent -mc 200,301 --threads 100|waybackurls | grep -E "\.json(?:onp?)?$" |anew
+4.cat domain.txt | assetfinder -subs-only | anew | httpx -silent -mc 200,301 | waybackurls
+5.cat domain.txt| assetfinder -subs-only|anew |waybackurls |grep -E "\.json(?:onp?)?$"|anew|httpx --title --mc 200,301,302 -o youzhanok.txt
 ```
+
+
+
+批量扫描js文件
+
+JSFSCAN.h
+
+>```
+>docker run -v $(pwd):/jsfscan -it jsfscan  "/bin/bash"
+>```
+
+```
+bash JSFScan.sh -l target.txt  --all -r -o zhipin.ru
+```
+
+
+
+
 
 ## 收集资产
 
@@ -83,9 +106,19 @@ python3 X-Fofa.py 'cert=" BEIJING JINGDONG SHANGKE INFORMATION TECHNOLOGY CO., L
 
 利用第三方服务提取:
 
+(1)
+
 ```
 curl --silent https://sonar.omnisint.io/subdomains/didichuxing.com | grep -oE "[a-zA-Z0-9._-]+\.didichuxing.com" | sort -u
 ```
+
+(2)
+
+```
+curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | httpx -silent -threads 300 | anew
+```
+
+
 
 
 
