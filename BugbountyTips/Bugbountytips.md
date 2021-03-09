@@ -82,8 +82,10 @@ JSFSCAN.h
 - Install [Sublist3r](https://github.com/aboul3la/Sublist3r) (optional)
 - python3 sub404.py -h
 
-```
+example:
 
+```
+ sub404 -d qq.com
 ```
 
 
