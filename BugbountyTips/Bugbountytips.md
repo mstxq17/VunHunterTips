@@ -45,6 +45,8 @@ X-Forwarded-Origin: 127.0.0.1
 
 获取json文件
 
+(1)
+
 ```
 1.assetfinder http://tesla.com | waybackurls | grep -E "\.json(?:onp?)?$" | anew
 2.assetfinder $(cat domain.txt) |anew| waybackurls | grep -E "\.json(?:onp?)?$" |anew
@@ -54,6 +56,16 @@ X-Forwarded-Origin: 127.0.0.1
 6. cat target.txt | assetfinder -subs-only |anew | waybackurls| anew| grep -v 'jpg' |  httpx -silent -mc 200,301 -o resultAll.txt
 7.cat target.txt | assetfinder -subs-only |grep -v 'static\|img' |anew | waybackurls| anew| grep -v 'jpg' |  httpx -silent -mc 200,301 -o resultAll.txt
 ```
+
+(2)
+
+```
+gospider -s https://twitch.tv --js | grep -E "\.js(?:onp?)?$" | awk '{print $4}' | tr -d "[]" | anew | anti-burl
+```
+
+
+
+
 
 
 
@@ -69,6 +81,8 @@ JSFSCAN.h
 1.sed   "s/^/http:\/\//g"  targets.txt > targets1.txt
 2.bash JSFScan.sh -l target.txt  --all -r -o target.ru
 ```
+
+
 
 
 
@@ -140,6 +154,12 @@ curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\
 
 
 
+
+
+
+## 在线工具
+
+生成反弹shell: https://www.revshells.com/
 
 
 

