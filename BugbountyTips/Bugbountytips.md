@@ -74,6 +74,20 @@ JSFSCAN.h
 
 
 
+批量扫描账户接管
+
+- git clone https://github.com/r3curs1v3-pr0xy/sub404.git
+- Install dependencies: pip install -r requirements.txt
+- Install [Subfinder](https://github.com/projectdiscovery/subfinder) (optional)
+- Install [Sublist3r](https://github.com/aboul3la/Sublist3r) (optional)
+- python3 sub404.py -h
+
+```
+
+```
+
+
+
 ## 收集资产
 
 根据favicon图标来搜索:
@@ -120,6 +134,8 @@ curl --silent https://sonar.omnisint.io/subdomains/didichuxing.com | grep -oE "[
 ```
 curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | httpx -silent -threads 300 | anew
 ```
+
+
 
 
 

