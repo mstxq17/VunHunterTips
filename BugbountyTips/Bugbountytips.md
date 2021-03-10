@@ -59,17 +59,32 @@ X-Forwarded-Origin: 127.0.0.1
 
 (2)
 
+**gospider爬虫的用法**
+
+```
+gospider -S targets1.txt -o output -c 30 -d 3 --blacklist ".(jpg|jpeg|gif|css|tif|tiff|png|ttf|woff|woff2|ico)"
+
+gospider -s "https://google.com/" -o output -c 10 -d 1 --other-source --include-subs
+```
+
 ```
 gospider -s https://twitch.tv --js | grep -E "\.js(?:onp?)?$" | awk '{print $4}' | tr -d "[]" | anew | anti-burl
+
+cat gospider | pcregrep -oP "http(s)?://((?i)(([a-zA-Z0-9]{1}|[_a-zA-Z0-9]{1}[_a-zA-Z0-9-]{0,61}[a-zA-Z0-9]{1})[.]{1})+)?ROOTDOMAIN.*"
+
+提取URL:
+cat *_* | grep -ohr -E "https?://[a-zA-Z0-9\.\/_&=@$%?~#-]*" |
+```
+
+用于:批量扫描Key泄露
+
+```
+cat 200.txt| xargs -I %% SecretFinder -i %% -o cli
 ```
 
 
 
-
-
-
-
-批量扫描js文件
+批量扫描js文件:
 
 JSFSCAN.h
 
@@ -86,9 +101,7 @@ JSFSCAN.h
 
 
 
-
-
-批量扫描账户接管
+批量扫描域名接管
 
 - git clone https://github.com/r3curs1v3-pr0xy/sub404.git
 - Install dependencies: pip install -r requirements.txt

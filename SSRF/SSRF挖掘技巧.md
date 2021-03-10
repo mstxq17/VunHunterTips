@@ -55,3 +55,9 @@ Content-Type: image/svg+xml
 
 利用参考:https://hackerone.com/reports/223203
 
+
+
+## 相关的在线工具
+
+记录触发点: https://ssrftest.com/
+
