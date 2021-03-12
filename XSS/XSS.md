@@ -15,6 +15,17 @@ ls -lah xss.doc
 
 
 
+基于javascript下的绕过:
+
+原理:
+
+```
+B=1
+B["constructor"]["constructor"]("alert(1)")();
+```
+
+不同语言版:https://t.co/cqmLwZmuo5?amp=1
+
 
 
 
