@@ -117,6 +117,24 @@ example:
 
 
 
+一体化扫描器reconftw:
+
+```
+INSTALL:
+cd Docker && docker build -t reconftw .
+docker run -it -v  /Volumes/windowSSD/挖洞工具类/reconftw:/root/Tools/reconftw reconftw /bin/bash
+
+USAGE:
+./reconftw.sh -d example.com -r
+mkdir  /root/Tools/reconftw
+./reconftw.sh -l target.txt -r -o  /output/directory/
+./reconftw.sh -l target.txt -a -o  /output/directory/
+```
+
+
+
+
+
 ## 收集资产
 
 根据favicon图标来搜索:
