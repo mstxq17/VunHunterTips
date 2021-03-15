@@ -128,7 +128,7 @@ USAGE:
 ./reconftw.sh -d example.com -r
 mkdir  /root/Tools/reconftw
 ./reconftw.sh -l target.txt -r -o  /output/directory/
-./reconftw.sh -l target.txt -a -o  /output/directory/
+./reconftw.sh -l target.txt -a --deep -o  /output/directory/
 ```
 
 
