@@ -124,7 +124,9 @@ INSTALL:
 cd Docker && docker build -t reconftw .
 docker run -it -v  /Volumes/windowSSD/挖洞工具类/reconftw:/root/Tools/reconftw reconftw /bin/bash
 
-docker run -it -p 8081:80  registry.cn-beijing.aliyuncs.com/xq17/reconftw:v1  /bin/bash
+docker run -it -p 8081:80   -v  /Volumes/windowSSD/挖洞工具类/reconftw:/root/Tools/reconftw reconftw  registry.cn-beijing.aliyuncs.com/xq17/reconftw:v1  /bin/bash
+
+docker run -it -p 8081:80   -v  /Volumes/windowSSD/挖洞工具类/reconftw:/root/Tools/reconftw  reconftw  /bin/bash
 
 挂代理使用:export all_proxy=socks5://127.0.0.1:7890
 
@@ -187,6 +189,8 @@ curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\
 ```
 
 
+
+### 收集子域名
 
 
 
