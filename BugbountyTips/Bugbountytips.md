@@ -139,6 +139,20 @@ mkdir  /root/Tools/reconftw
 
 
 
+批量扫描Dom/reflecrt XSS
+
+```
+xargs -a domain -I@ sh -c 'wingman -u @ --crawl | notify
+```
+
+安装:
+
+```
+wget https://xsswingman.com/downloads/wingman/wingman_darwin_amd64.zip
+```
+
+
+
 
 
 ## 收集资产
