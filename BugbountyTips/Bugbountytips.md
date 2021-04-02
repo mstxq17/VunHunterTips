@@ -208,6 +208,21 @@ curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\
 
 
 
+## 请求方式脆弱点
+
+```
+GET /api/users/123/profile
+
+Try:
+GET       /api/users/123/profile
+POST     /api/users/123/profile
+PUT        /api/users/123/profile
+PATCH    /api/users/123/profile
+DELETE  /api/users/123/profile
+```
+
+
+
 
 
 ## 在线工具
