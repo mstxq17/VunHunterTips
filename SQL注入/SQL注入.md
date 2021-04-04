@@ -21,3 +21,11 @@
 10.?module=
 ```
 
+
+
+## 测试语句
+
+```
+select if( table_name like 'x', benchmark(100000,sha1('_Y000!_')), concat(table_name) ) from information_schema.tables
+```
+
