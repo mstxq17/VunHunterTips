@@ -35,6 +35,14 @@ X-Forwarded-Origin: 127.0.0.1
 
 ## 批量扫描思路
 
+key分享的带端口的一种扫描:
+
+```
+cat domains.txt | ksubdomain -f 312W_Subdomains.txt -silent -o subdomains_res.txt | naabu -p 80,443,7000-7099,8080-8089 -silent -o naabu_res.txt | httpx -silent | nuclei -t nuclei-templates/ -o nuclei_res.txt
+```
+
+
+
 `subfinder -d baidu.com -silent | httpx -silent | nuclei  -t files/ -o results.txt`
 
 `subfinder -d nuomi.com -silent | httpx -silent | nuclei -t nuclei-templates  -o results.txt`
