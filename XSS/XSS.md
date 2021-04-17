@@ -80,9 +80,18 @@ Final Payload:
 Works in cases where double quotes are escaped 
 
 <xhzeem/x=\" ....>
+
 ```
 
-S
+
+
+## alert(1) 绕过技巧
+
+```
+window.alert?.() and (window?.alert)`` 
+```
+
+
 
 ## 挖掘XSS技巧
 
