@@ -16,11 +16,11 @@
 
 ### 任意密码重置
 
+![image-20210428000911871](Bugbountytips.assets/image-20210428000911871.png)
+
 发送重置密码邮件的时候可以增加:
 
 X-Forwarded-Host: xss.sb
-
-
 
 
 
