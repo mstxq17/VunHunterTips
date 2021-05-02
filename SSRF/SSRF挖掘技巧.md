@@ -59,5 +59,8 @@ Content-Type: image/svg+xml
 
 ## 相关的在线工具
 
-记录触发点: https://ssrftest.com/
+记录触发点:
 
+ https://ssrftest.com/
+
+https://webhook.site/ (可以自定义文件内容)

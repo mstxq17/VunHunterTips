@@ -145,6 +145,15 @@ mkdir  /root/Tools/reconftw
 ./reconftw.sh -l target.txt -a --deep -o  /output/directory/
 ```
 
+```
+docker pull registry.cn-beijing.aliyuncs.com/xq17/reconftw:v1
+docker run -it -p 8081:80  -v $(pwd)/output:/root/Tools/reconftw/Recon/ registry.cn-beijing.aliyuncs.com/xq17/reconftw:v1 /bin/bash
+./reconftw.sh -d target.com -r --deep -o /root/Tools/reconftw/Recon/
+./reconftw.sh -l target.txt -r --deep -o /root/Tools/reconftw/Recon/output
+```
+
+其他细节:https://github.com/six2dez/reconftw
+
 
 
 批量扫描Dom/reflecrt XSS
