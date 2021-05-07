@@ -223,6 +223,13 @@ curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\
 
 ### 收集子域名
 
+```
+amass enum -d target.com -o /filepath/subdomains.txt
+sort -u subdomains.txt | httprobe > /filepath/uniq.txt
+```
+
+
+
 
 
 ## 请求方式脆弱点
