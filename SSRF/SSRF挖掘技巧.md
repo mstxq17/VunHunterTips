@@ -6,7 +6,11 @@
 
 ![Et9d-mlXYAE7cg0](常用的SSRF参数.assets/Et9d-mlXYAE7cg0-3134197.jpeg)
 
-### 1.2 burp插件SSRF-king
+
+
+
+
+### 0x1.2 burp插件SSRF-king
 
 ```
 git clone https://github.com/ethicalhackingplayground/ssrf-king
@@ -16,6 +20,15 @@ gradle build
 > 自动使用burpcollaborator来进行探测非常方便
 
 介绍链接:https://www.kitploit.com/2021/01/ssrf-king-ssrf-plugin-for-burp.html?utm_source=dlvr.it&utm_medium=twitter
+
+## 0x1.3 one-liner
+
+```
+1 Run getallurls for all assets & merge results
+2 `cat results | grep "url="| anti-burl | tee ssrf.txt`
+3 Review & cleanup list 
+4 Fuzz all "url-like" params w/ Burp collab & #ffuf
+```
 
 
 
