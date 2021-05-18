@@ -256,6 +256,12 @@ sort -u subdomains.txt | httprobe > /filepath/uniq.txt
 sudo docker run -it --rm -v /home/ubuntu/results/:/root/results/ uexpl0it/subdomains-enumerator:0.4
 ```
 
+3.第三方api
+
+```
+HOST=immomo.com && curl --silent --insecure "https://sonar.omnisint.io/subdomains/${HOST}" | grep -oE "[a-zA-Z0-9._-]+\.${HOST}"
+```
+
 
 
 
@@ -279,7 +285,9 @@ DELETE  /api/users/123/profile
 
 
 
+## OneLiner
 
+https://github.com/twseptian/oneliner-bugbounty
 
 
 
