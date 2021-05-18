@@ -24,6 +24,26 @@ X-Forwarded-Host: xss.sb
 
 
 
+## header头Bypass
+
+这里Chrome可以使用ModHeader插件,然后配置
+
+```
+X-Originating-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+X-Remote-IP: 127.0.0.1
+X-Remote-Addr: 127.0.0.1   
+X-Forwarded-Host : 127.0.0.1 
+X-Client-IP : 127.0.0.1 
+X-Host : 127.0.0.1 
+Forwarded: 127.0.0.1
+X-Forwarded-By: 127.0.0.1
+X-Forwarded-For-IP: 127.0.0.1
+X-True-IP: 127.0.0.1
+```
+
+![image-20210517170452356](Bugbountytips.assets/image-20210517170452356.png)
+
 ### 绕过401
 
 ```
@@ -223,9 +243,17 @@ curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\
 
 ### 收集子域名
 
+1.amass 收集
+
 ```
 amass enum -d target.com -o /filepath/subdomains.txt
 sort -u subdomains.txt | httprobe > /filepath/uniq.txt
+```
+
+2.多种扫描方式集合docker镜像
+
+```
+sudo docker run -it --rm -v /home/ubuntu/results/:/root/results/ uexpl0it/subdomains-enumerator:0.4
 ```
 
 
@@ -244,6 +272,12 @@ PUT        /api/users/123/profile
 PATCH    /api/users/123/profile
 DELETE  /api/users/123/profile
 ```
+
+
+
+
+
+
 
 
 
