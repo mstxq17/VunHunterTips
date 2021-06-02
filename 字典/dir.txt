@@ -1,0 +1,1 @@
+/wp-admin/setup-config.php?step=1 
