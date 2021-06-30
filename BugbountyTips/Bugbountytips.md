@@ -262,6 +262,17 @@ sudo docker run -it --rm -v /home/ubuntu/results/:/root/results/ uexpl0it/subdom
 HOST=immomo.com && curl --silent --insecure "https://sonar.omnisint.io/subdomains/${HOST}" | grep -oE "[a-zA-Z0-9._-]+\.${HOST}"
 ```
 
+4.验证+去重
+
+
+
+```
+1.curl "https://public-dns.info/nameservers.txt" -L -o resolver.txt
+2.puredns resolve baidu_all_sub.txt -r resolver.txt  --write valid_domains.txt \
+                            --write-wildcards wildcards.txt \
+                            --write-massdns massdns.txt
+```
+
 
 
 

